@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <script src="{% static 'css/js/pdf.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <title>Document</title>
+<style>
+table {
+ 
+  width: 50%;
+  
+}
+.bor{
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+
+
+th, td {
+  text-align: left;
+  padding: 6px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color:#00A3E1;
+  color: black;
+}
+#main-div{
+  margin-left: 3%;
+}
+</style>
+</head>
+<body>
+
+<!-- <div class="col-md-10 text-right mb-3">
+  <button class="btn btn-primary" id="download"> Download Pdf </button>
+</div> -->
+<!-- <ol>{% for i in excel_data4 %}
+<li>{{ i }}</li>
+{% endfor %}</ol>
+<br><br>
+<ol>
+{% for i in assign1 %}
+<li>{{ i }}</li>
+{% endfor %}</ol>
+<ol>
+  {% for i in excel_data5 %}
+  <li>{{ i }}</li>
+  {% endfor %}</ol> -->
+<div id="main-div">
+  <h2 style="text-align: center;">PSCMR COLLEGE OF ENGINEERING AND TECHNOLOGY</h2>
+  <h2 style="text-align: center;">Department of {{ depart }}</h2>
+  <h3><b>Course Attainment</b></h3>
+
+<table class="bor">
+  <tr>
+    <th>Faculty Name</th>
+    <th>{{ Details.0 }}</th>
+    <th><b>Class</b></th>
+    <th>{{ Details.1 }}</th>
+  </tr>
+  <tr>
+    <td><b>Year</b></td>
+    <td>{{ Details.2 }}</td>
+    <td><b>Semester</b></td>
+    <td>{{ Details.3 }}</td>
+  </tr>
+  <tr>
+    <td><b>Regulation</b></td>
+    <td>{{ Details.4 }}</td>
+    <td><b>Academic Year</b></td>
+    <td>{{ Details.5 }}</td>
+  </tr>
+  <tr>
+    <td><b>Course</b></td>
+    <td>{{ Details.6 }}</td>
+    <td><b>Course Code</b></td>
+    <td>{{ Details.7 }}</td>
+  </tr>
+</table>
+<br><br>
+<table class="bor">
+  <tr><b>
+    <th>Attainment</th>
+    <th>SEE</th>
+    <th>Internal</th>
+    <th>Direct Attainment</th>
+    <th>CO Feedbsck</th>
+    <th>CO Overall Attainment</th>
+  </tb></tr>
+<tr>
+  <td>CO1</td>
+  <td>{{ main.Sem.0 }}</td>
+  <td>{{ internal.0 }}</td>
+  <td>{{ direct.0 }}</td>
+  <td>{{ excel_data4.1.1 }}</td>
+  <td>{{ over.0 }}</td>
+  </tr>
+  <tr>
+  <td>CO2</td>
+  <td>{{ main.Sem.0 }}</td>
+  <td>{{ internal.1 }}</td>
+  <td>{{ direct.1 }}</td>
+  <td>{{ excel_data4.2.1 }}</td>
+  <td>{{ over.1 }}</td>
+  </tr>
+  <tr>
+  <td>CO3</td>
+  <td>{{ main.Sem.0 }}</td>
+  <td>{{ internal.2 }}</td>
+  <td>{{ direct.2 }}</td>
+  <td>{{ excel_data4.3.1 }}</td>
+  <td>{{ over.2 }}</td>
+  </tr>
+  <tr>
+  <td>CO4</td>
+  <td>{{ main.Sem.0 }}</td>
+  <td>{{ internal.3 }}</td>
+  <td>{{ direct.3 }}</td>
+  <td>{{ excel_data4.4.1 }}</td>
+  <td>{{ over.3 }}</td>
+  </tr>
+  <tr>
+  <td>CO5</td>
+  <td>{{ main.Sem.0 }}</td>
+  <td>{{ internal.4 }}</td>
+  <td>{{ direct.4 }}</td>
+  <td>{{ excel_data4.5.1 }}</td>
+  <td>{{ over.3 }}</td>
+  </tr>
+  <tr>
+  <td>CO6</td>
+  <td>{{ main.Sem.0 }}</td>
+  <td>{{ internal.5 }}</td>
+  <td>{{ direct.5 }}</td>
+  <td>{{ excel_data4.6.1 }}</td>
+  <td>{{ over.5 }}</td>
+  </tr>
+<tr>
+  <td colspan="5" align="right"><b>Overall course attainment</b></td>
+  <td><b>{{ final }}</b></td>
+</tr>
+</table>
+<br><br>
+<h3><span style="text-align: left;">Course Incharge</span><span style="text-align: right;margin-left: 75%;">PAC</span></h3>
+<br><br>
+<h2 style="text-align: center;">PSCMR COLLEGE OF ENGINEERING AND TECHNOLOGY</h2>
+  <h2 style="text-align: center;">Department of {{ depart }}</h2>
+  <h3 >PO Attainment</h3>
+<table class="bor">
+  <tr>
+    
+    <th>Faculty Name</th>
+    <th>{{ Details.0 }}</th>
+    <th>Class</th>
+    <th>{{ Details.1 }}</th>
+    <th>Year</th>
+    <th>{{ Details.2 }}</th>
+    <th>Semester</th>
+    <th>{{ Details.3 }}</th>
+  </tr>
+  
+</table>
+<br>
+
+<table class="bor">
+  <tr>
+    <th>Regulation</th>
+    <th>{{ Details.4 }}</th>
+    <th>Academic Year</th>
+    <th>{{ Details.5 }}</th>
+    <th>Course Code</th>
+    <th>{{ Details.7 }}</th>
+  </tr>
+  <tr>
+  <td colspan="3">Course</td>
+  <td colspan="3">{{ Details.6 }}</td>  
+</tr></table>
+<br>
+<h3>CO-PO mapping</h3>
+<table class="bor">
+  <tr>
+    <th rowspan="2">CO</th>
+    <th colspan="12">POs</th>
+    <th colspan="3">PSOs</th>
+  </tr>
+  <tr>
+    <th>PO1</th>
+    <th>PO2</th>
+    <th>PO3</th>
+    <th>PO4</th>
+    <th>PO5</th>
+    <th>PO6</th>
+    <th>PO7</th>
+    <th>PO8</th>
+    <th>PO9</th>
+    <th>PO10</th>
+    <th>PO11</th>
+    <th>PO12</th>
+    <th>PSO1</th>
+    <th>PSO2</th>
+    <th>PSO3</th>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <td>CO1</td>
+    <td>{{ excel_data6.2.2 }}</td>
+    <td>{{ excel_data6.2.3 }}</td>
+    <td>{{ excel_data6.2.4 }}</td>
+    <td>{{ excel_data6.2.5 }}</td>
+    <td>{{ excel_data6.2.6 }}</td>
+    <td>{{ excel_data6.2.7 }}</td>
+    <td>{{ excel_data6.2.8 }}</td>
+    <td>{{ excel_data6.2.9 }}</td>
+    <td>{{ excel_data6.2.10 }}</td>
+    <td>{{ excel_data6.2.11 }}</td>
+    <td>{{ excel_data6.2.12 }}</td>
+    <td>{{ excel_data6.2.13 }}</td>
+    <td>{{ excel_data6.2.14 }}</td>
+    <td>{{ excel_data6.2.15 }}</td>
+    <td>{{ excel_data6.2.16 }}</td>
+    
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <td>CO2</td>
+    <td>{{ excel_data6.3.2 }}</td>
+    <td>{{ excel_data6.3.3 }}</td>
+    <td>{{ excel_data6.3.4 }}</td>
+    <td>{{ excel_data6.3.5 }}</td>
+    <td>{{ excel_data6.3.6 }}</td>
+    <td>{{ excel_data6.3.7 }}</td>
+    <td>{{ excel_data6.3.8 }}</td>
+    <td>{{ excel_data6.3.9 }}</td>
+    <td>{{ excel_data6.3.10 }}</td>
+    <td>{{ excel_data6.3.11 }}</td>
+    <td>{{ excel_data6.3.12 }}</td>
+    <td>{{ excel_data6.3.13 }}</td>
+    <td>{{ excel_data6.3.14 }}</td>
+    <td>{{ excel_data6.3.15 }}</td>
+    <td>{{ excel_data6.3.16 }}</td>
+
+   </tr> 
+   <tr style="background-color: #f2f2f2;">
+    <td>CO3</td>
+    <td>{{ excel_data6.4.2 }}</td>
+    <td>{{ excel_data6.4.3 }}</td>
+    <td>{{ excel_data6.4.4 }}</td>
+    <td>{{ excel_data6.4.5 }}</td>
+    <td>{{ excel_data6.4.6 }}</td>
+    <td>{{ excel_data6.4.7 }}</td>
+    <td>{{ excel_data6.4.8 }}</td>
+    <td>{{ excel_data6.4.9 }}</td>
+    <td>{{ excel_data6.4.10 }}</td>
+    <td>{{ excel_data6.4.11 }}</td>
+    <td>{{ excel_data6.4.12 }}</td>
+    <td>{{ excel_data6.4.13 }}</td>
+    <td>{{ excel_data6.4.14 }}</td>
+    <td>{{ excel_data6.4.15 }}</td>
+    <td>{{ excel_data6.4.16 }}</td>
+    
+   </tr> 
+   <tr style="background-color: #f2f2f2;">
+    <td>CO4</td>
+    <td>{{ excel_data6.5.2 }}</td>
+    <td>{{ excel_data6.5.3 }}</td>
+    <td>{{ excel_data6.5.4 }}</td>
+    <td>{{ excel_data6.5.5 }}</td>
+    <td>{{ excel_data6.5.6 }}</td>
+    <td>{{ excel_data6.5.7 }}</td>
+    <td>{{ excel_data6.5.8 }}</td>
+    <td>{{ excel_data6.5.9 }}</td>
+    <td>{{ excel_data6.5.10 }}</td>
+    <td>{{ excel_data6.5.11 }}</td>
+    <td>{{ excel_data6.5.12 }}</td>
+    <td>{{ excel_data6.5.13 }}</td>
+    <td>{{ excel_data6.5.14 }}</td>
+    <td>{{ excel_data6.5.15 }}</td>
+    <td>{{ excel_data6.5.16 }}</td>
+    
+   </tr> 
+   <tr style="background-color: #f2f2f2;">
+    <td>CO5</td>
+    <td>{{ excel_data6.6.2 }}</td>
+    <td>{{ excel_data6.6.3 }}</td>
+    <td>{{ excel_data6.6.4 }}</td>
+    <td>{{ excel_data6.6.5 }}</td>
+    <td>{{ excel_data6.6.6 }}</td>
+    <td>{{ excel_data6.6.7 }}</td>
+    <td>{{ excel_data6.6.8 }}</td>
+    <td>{{ excel_data6.6.9 }}</td>
+    <td>{{ excel_data6.6.10 }}</td>
+    <td>{{ excel_data6.6.11 }}</td>
+    <td>{{ excel_data6.6.12 }}</td>
+    <td>{{ excel_data6.6.13 }}</td>
+    <td>{{ excel_data6.6.14 }}</td>
+    <td>{{ excel_data6.6.15 }}</td>
+    <td>{{ excel_data6.6.16 }}</td>
+    
+   </tr> 
+   <tr style="background-color: #f2f2f2;">
+    <td>CO6</td>
+    <td>{{ excel_data6.7.2 }}</td>
+    <td>{{ excel_data6.7.3 }}</td>
+    <td>{{ excel_data6.7.4 }}</td>
+    <td>{{ excel_data6.7.5 }}</td>
+    <td>{{ excel_data6.7.6 }}</td>
+    <td>{{ excel_data6.7.7 }}</td>
+    <td>{{ excel_data6.7.8 }}</td>
+    <td>{{ excel_data6.7.9 }}</td>
+    <td>{{ excel_data6.7.10 }}</td>
+    <td>{{ excel_data6.7.11 }}</td>
+    <td>{{ excel_data6.7.12 }}</td>
+    <td>{{ excel_data6.7.13 }}</td>
+    <td>{{ excel_data6.7.14 }}</td>
+    <td>{{ excel_data6.7.15 }}</td>
+    <td>{{ excel_data6.7.16 }}</td>
+    
+   </tr> 
+   <tr style="background-color: #f2f2f2;">
+    <td>Avg</td>
+    <td>{{ excel_data6.8.1 }}</td>
+    <td>{{ excel_data6.8.2 }}</td>
+    <td>{{ excel_data6.8.3 }}</td>
+    <td>{{ excel_data6.8.4 }}</td>
+    <td>{{ excel_data6.8.5 }}</td>
+    <td>{{ excel_data6.8.6 }}</td>
+    <td>{{ excel_data6.8.7 }}</td>
+    <td>{{ excel_data6.8.8 }}</td>
+    <td>{{ excel_data6.8.9 }}</td>
+    <td>{{ excel_data6.8.10 }}</td>
+    <td>{{ excel_data6.8.11 }}</td>
+    <td>{{ excel_data6.8.12 }}</td>
+    <td>{{ excel_data6.8.13 }}</td>
+    <td>{{ excel_data6.8.14 }}</td>
+    <td>{{ excel_data6.8.15 }}</td>
+    
+   </tr> 
+
+</table>
+<br><br><br><br>
+<h3>CO Overall attainment</h3>
+<table ><tr style="border: 1px solid white;border-collapse: collapse;"><td style=" width: 90%;border: 1px solid white;border-collapse: collapse;">
+
+<table style="border: 1px solid white;border-collapse: collapse;">
+  <tr>
+    <td>CO1</td>
+    <td>{{ excel_data4.1.8 }}</td>
+  </tr>
+  <tr>
+    <td>CO2</td>
+    <td>{{ excel_data4.2.8 }}</td>
+  </tr>
+  <tr>
+    <td>CO3</td>
+    <td>{{ excel_data4.3.8 }}</td>
+  </tr>
+  <tr>
+    <td>CO4</td>
+    <td>{{ excel_data4.4.8 }}</td>
+  </tr>
+  <tr>
+    <td>CO5</td>
+    <td>{{ excel_data4.5.8 }}</td>
+  </tr>
+  <tr>
+    <td>CO6</td>
+    <td>{{ excel_data4.6.8 }}</td>
+  </tr>
+
+</table></td>
+
+
+<td style="border: 1px solid white;border-collapse: collapse;">
+
+  <table style="border-collapse: collapse;">
+    <tr>
+      <th style="background-color:#FFFF33;color: black;">Overall PO attainment for the Course</th>
+      <th style="background-color:#FFFF33;color: black;">Overall PSO attainment for the Course</th>
+    </tr>
+    <tr>
+      <td>{{ excel_data5.10.0 }}</td>
+      <td>{{ excel_data5.10.1 }}</td>
+    </tr>
+
+  </table>
+</td>
+</tr>
+</table>
+<br>
+<h3>PO attainment from course</h3>
+</table>
+<table class="bor">
+  <tr>
+    <th>PO1</th>
+    <th>PO2</th>
+    <th>PO3</th>
+    <th>PO4</th>
+    <th>PO5</th>
+    <th>PO6</th>
+    <th>PO7</th>
+    <th>PO8</th>
+    <th>PO9</th>
+    <th>PO10</th>
+    <th>PO11</th>
+    <th>PO12</th>
+    <th>PS01</th>
+    <th>PS02</th>
+    <th>PS03</th>
+  </tr>
+  <tr>
+    <td>{{ excel_data5.9.2 }}</td>
+    <td>{{ excel_data5.9.3 }}</td>
+    <td>{{ excel_data5.9.4 }}</td>
+    <td>{{ excel_data5.9.5 }}</td>
+    <td>{{ excel_data5.9.6 }}</td>
+    <td>{{ excel_data5.9.7 }}</td>
+    <td>{{ excel_data5.9.8 }}</td>
+    <td>{{ excel_data5.9.9 }}</td>
+    <td>{{ excel_data5.9.10 }}</td>
+    <td>{{ excel_data5.9.11 }}</td>
+    <td>{{ excel_data5.9.12 }}</td>
+    <td>{{ excel_data5.9.13 }}</td>
+    <td>{{ excel_data5.9.14 }}</td>
+    <td>{{ excel_data5.9.15 }}</td>
+    <td>{{ excel_data5.9.16 }}</td>
+
+  </tr>
+</table>
+<br><br>
+<h3><span style="text-align: left;">Faculty Signature</span><span style="text-align: right;margin-left: 75%;">PAC</span></h3>
+</div>
+</body>
+</html>
+
+

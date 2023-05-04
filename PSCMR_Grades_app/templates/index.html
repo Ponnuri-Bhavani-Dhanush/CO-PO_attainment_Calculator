@@ -1,0 +1,161 @@
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css'%}">
+    <title>PSCMR</title>
+</head>
+    <body>
+       <!-- <a href="download.html">Download here</a> -->
+      
+         <!-- <form action="{% url 'index' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file"
+                   title="Upload excel file"
+                   name="excel_file"
+                   style="border: 1px solid black; padding: 5px;"
+                   required="required">
+            <p>
+            <input type="submit"
+                   value="Upload"
+                   style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+        </form> -->
+        <center><div class="d-flex align-items-center light-blue-gradient">
+            <div class="container" style="margin: 30px auto 30px auto;">
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card rounded-0 shadow">
+                            <div class="card-body">
+                                <center><h3 style="color: #00A3E1;">ATTAINMENT CALCULATION SYSTEM</h3></center></br>
+                                <form action="{% url 'index' %}" class="mt32" method="POST" name="donateform" id="form1" action = "index" enctype="multipart/form-data">
+                                    {% csrf_token %}
+    
+        <!-- <input type="hidden" name="csrfmiddlewaretoken" value="1AqUfCxX898llsVUfJO5FZH5UYpdGjSG1zNjzOWnv2pNPmGf88pVM0HYURPM8iyH"> -->
+
+        <div class="form-group row">
+            <h5 for="fname" class="control-label col-sm-4">Faculty Name</h5>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" name="FName" placeholder="Enter Faculty name" required="">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <h5 class="control-label col-sm-4">Branch</h5>
+            <div class="col-sm-8">
+              <select id="branch" name="branch" class="form-control" required="">
+                <option disabled="" selected="" value=""> -- Select Branch -- </option>
+                <option value="CSE">CSE</option>
+		<option value="CSE-AI&DS">CSE-AI&DS</option>
+		<option value="CSE-AI&ML">CSE-AI&ML</option>
+		<option value="CSE-AI">CSE-AI</option>
+		<option value="CSE-DS">CSE-DS</option>
+               	<option value="CSE-IoT&CS(BCT)">CSE-IoT&CS(BCT)</option>
+		<option value="CSE-IoT">CSE-IoT</option>
+		<option value="ECE">ECE</option>
+		<option value="EEE">EEE</option>
+
+              </select>
+        </div>
+        </div> 
+        
+        <div class="form-group row">
+            <h5 class="control-label col-sm-4">Year</h5>
+            <div class="col-sm-8">
+              <select id="year" name="year" class="form-control" required="">
+                <option disabled="" selected="" value=""> -- Select Year -- </option>
+                <option value="IV">4th year</option>
+                <option value="III">3rd year</option>
+                <option value="II">2nd year</option>
+                <option value="I">1st year</option>
+               
+              </select>
+        </div>
+        </div>
+
+        <div class="form-group row">
+            <h5 class="control-label col-sm-4">Semester</h5>
+            <div class="col-sm-8">
+              <select id="semester" name="semester" class="form-control" required="">
+                <option disabled="" selected="" value=""> -- Select Semester -- </option>
+                <option value="I">1st Semester</option>
+                <option value="II">2nd Semester</option>
+               
+              </select>
+        </div>
+        </div>
+
+        <div class="form-group row">
+            <h5 class="control-label col-sm-4">Regulation</h5>
+            <div class="col-sm-8">
+              <select id="regulation" name="regulation" class="form-control" required="">
+                <option disabled="" selected="" value=""> -- Select Regulation -- </option>
+                <option value="R19">R19</option>
+                <option value="R20">R20</option>
+               
+              </select>
+        </div>
+        </div>
+
+        <div class="form-group row">
+            <h5 class="control-label col-sm-4">Academic year</h5>
+            <div class="col-sm-8">
+              <select id="academic" name="academic" class="form-control" required="">
+                <option disabled="" selected="" value=""> -- Select Academic Year -- </option>
+                <option value="2022-23">2022-23</option>
+		<option value="2021-22">2021-22</option>
+		<option value="2020-21">2020-21</option>
+		<option value="2019-20">2019-20</option>
+		<option value="2018-19">2018-19</option>
+               
+              </select>
+        </div>
+        </div>
+        
+        <div class="form-group row">
+            <h5 for="Course" class="control-label col-sm-4">Course</h5>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" name="Course" placeholder="Enter Course Name" required="">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <h5 for="Coursecode" class="control-label col-sm-4">Course Code</h5>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" name="Coursecode" placeholder="Enter Course Code" required="">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <h5 for="excel_file" class="control-label col-sm-4">Upload Excel File</h5>
+            <div class="col-sm-8">
+              <input type="file" title = "Upload excel file" class="form-control" name="excel_file" required="">
+            </div>
+        </div>
+    	<br>
+        <div align="center">
+        <button type="submit" class="btn btn-primary" value="Submit request">Submit</button>
+        </div>
+	<hr>
+	<a href="https://drive.google.com/drive/folders/1U5sbx1yfrIkk9fosAPqxncwretdIU58l?usp=sharing">Sample Template</a>
+	
+
+    </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Optional JavaScript -->
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+            </div></center>
+
+        
+</body>
+</html>
